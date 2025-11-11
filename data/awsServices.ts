@@ -1160,6 +1160,506 @@ result = predictor.predict(data)`,
       'Leverage SageMaker Pipelines for MLOps',
       'Implement A/B testing'
     ]
+  },
+
+  // Container Orchestration
+  {
+    id: 'eks',
+    title: 'Amazon EKS',
+    description: 'Managed Kubernetes service for running containerized applications',
+    icon: '☸️',
+    category: 'Compute',
+    codingRequired: true,
+    programmingLanguages: ['YAML', 'Any language', 'Helm'],
+    useCases: [
+      'Microservices architecture',
+      'Container orchestration',
+      'Hybrid cloud deployments',
+      'Batch processing',
+      'ML training workloads',
+      'CI/CD pipelines'
+    ],
+    keyFeatures: [
+      'Fully managed Kubernetes control plane',
+      'Auto-scaling with Cluster Autoscaler',
+      'Integrated with AWS services',
+      'Multi-AZ for high availability',
+      'EKS Anywhere for on-premises',
+      'Support for Spot Instances'
+    ],
+    codeExample: `# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: app
+        image: my-app:v1.0.0
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        env:
+        - name: AWS_REGION
+          value: "us-east-1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-app
+  ports:
+  - port: 80
+    targetPort: 8080`,
+    interviewTopics: [
+      'EKS vs ECS vs Fargate',
+      'Kubernetes architecture (pods, services, deployments)',
+      'Node groups and Fargate profiles',
+      'RBAC and IAM integration',
+      'Cluster networking (VPC CNI)',
+      'Persistent storage with EBS/EFS',
+      'Service mesh (App Mesh, Istio)',
+      'Monitoring with CloudWatch Container Insights'
+    ],
+    bestPractices: [
+      'Use IAM roles for service accounts (IRSA)',
+      'Implement pod security policies',
+      'Use managed node groups',
+      'Configure horizontal pod autoscaling',
+      'Implement proper resource requests/limits',
+      'Use separate namespaces for environments'
+    ]
+  },
+
+  // Messaging Services
+  {
+    id: 'sqs',
+    title: 'Amazon SQS',
+    description: 'Fully managed message queuing service for decoupling applications',
+    icon: '📬',
+    category: 'Integration',
+    codingRequired: true,
+    programmingLanguages: ['Python', 'Node.js', 'Java', 'Any with SDK'],
+    useCases: [
+      'Decoupling microservices',
+      'Buffering requests',
+      'Asynchronous processing',
+      'Job queues',
+      'Event-driven workflows',
+      'Rate limiting'
+    ],
+    keyFeatures: [
+      'Unlimited throughput',
+      'Standard and FIFO queues',
+      'Dead letter queues',
+      'Message retention up to 14 days',
+      'Visibility timeout',
+      'Long polling support'
+    ],
+    codeExample: `import boto3
+
+sqs = boto3.client('sqs')
+queue_url = 'https://sqs.us-east-1.amazonaws.com/123456789/MyQueue'
+
+# Send message
+sqs.send_message(
+    QueueUrl=queue_url,
+    MessageBody='Hello from SQS',
+    MessageAttributes={
+        'Priority': {
+            'StringValue': 'high',
+            'DataType': 'String'
+        }
+    }
+)
+
+# Receive messages
+response = sqs.receive_message(
+    QueueUrl=queue_url,
+    MaxNumberOfMessages=10,
+    WaitTimeSeconds=20,  # Long polling
+    MessageAttributeNames=['All']
+)
+
+for message in response.get('Messages', []):
+    # Process message
+    print(f"Message: {message['Body']}")
+
+    # Delete message after processing
+    sqs.delete_message(
+        QueueUrl=queue_url,
+        ReceiptHandle=message['ReceiptHandle']
+    )`,
+    interviewTopics: [
+      'Standard vs FIFO queues',
+      'Visibility timeout',
+      'Dead letter queues',
+      'Long polling vs short polling',
+      'Message retention and deduplication',
+      'Integration with Lambda',
+      'Batch operations',
+      'SQS vs SNS vs EventBridge'
+    ],
+    bestPractices: [
+      'Use long polling to reduce costs',
+      'Implement idempotency',
+      'Set appropriate visibility timeout',
+      'Use dead letter queues for failed messages',
+      'Monitor queue depth',
+      'Use batch operations for efficiency'
+    ]
+  },
+
+  {
+    id: 'sns',
+    title: 'Amazon SNS',
+    description: 'Fully managed pub/sub messaging service for fan-out patterns',
+    icon: '📢',
+    category: 'Integration',
+    codingRequired: true,
+    programmingLanguages: ['Python', 'Node.js', 'Java', 'Any with SDK'],
+    useCases: [
+      'Application-to-application messaging',
+      'Fan-out notifications',
+      'Mobile push notifications',
+      'SMS and email alerts',
+      'Event-driven architectures',
+      'Distributed systems coordination'
+    ],
+    keyFeatures: [
+      'Topic-based pub/sub',
+      'Message filtering',
+      'FIFO topics',
+      'Multiple subscription protocols',
+      'Message encryption',
+      'Dead letter queues'
+    ],
+    codeExample: `import boto3
+import json
+
+sns = boto3.client('sns')
+
+# Create topic
+response = sns.create_topic(Name='MyAppNotifications')
+topic_arn = response['TopicArn']
+
+# Subscribe endpoints
+sns.subscribe(
+    TopicArn=topic_arn,
+    Protocol='sqs',
+    Endpoint='arn:aws:sqs:us-east-1:123456789:MyQueue'
+)
+
+sns.subscribe(
+    TopicArn=topic_arn,
+    Protocol='lambda',
+    Endpoint='arn:aws:lambda:us-east-1:123456789:function:ProcessNotification'
+)
+
+# Publish message
+sns.publish(
+    TopicArn=topic_arn,
+    Subject='New Order',
+    Message=json.dumps({
+        'orderId': '12345',
+        'amount': 99.99,
+        'status': 'pending'
+    }),
+    MessageAttributes={
+        'orderType': {
+            'DataType': 'String',
+            'StringValue': 'premium'
+        }
+    }
+)`,
+    interviewTopics: [
+      'SNS vs SQS vs EventBridge',
+      'Fan-out pattern',
+      'Message filtering',
+      'FIFO topics vs standard topics',
+      'Subscription protocols',
+      'Message delivery retry',
+      'SNS + SQS pattern',
+      'Mobile push notifications'
+    ],
+    bestPractices: [
+      'Use message filtering to reduce costs',
+      'Implement idempotent subscribers',
+      'Enable encryption at rest',
+      'Use FIFO topics for ordering',
+      'Monitor failed deliveries',
+      'Set appropriate retry policies'
+    ]
+  },
+
+  {
+    id: 'route53',
+    title: 'Amazon Route 53',
+    description: 'Scalable DNS and domain name registration service',
+    icon: '🌍',
+    category: 'Networking',
+    codingRequired: true,
+    programmingLanguages: ['Python', 'Terraform', 'CloudFormation', 'Any with SDK'],
+    useCases: [
+      'Domain registration',
+      'DNS routing',
+      'Health checks and monitoring',
+      'Traffic management',
+      'Disaster recovery',
+      'Blue/green deployments'
+    ],
+    keyFeatures: [
+      'Domain registration',
+      'DNS routing policies',
+      'Health checks',
+      'Traffic flow',
+      'DNS failover',
+      'Alias records for AWS resources'
+    ],
+    codeExample: `import boto3
+
+route53 = boto3.client('route53')
+
+# Create hosted zone
+response = route53.create_hosted_zone(
+    Name='example.com',
+    CallerReference=str(hash('example.com')),
+    HostedZoneConfig={
+        'Comment': 'My application domain',
+        'PrivateZone': False
+    }
+)
+
+hosted_zone_id = response['HostedZone']['Id']
+
+# Create A record
+route53.change_resource_record_sets(
+    HostedZoneId=hosted_zone_id,
+    ChangeBatch={
+        'Changes': [{
+            'Action': 'CREATE',
+            'ResourceRecordSet': {
+                'Name': 'www.example.com',
+                'Type': 'A',
+                'AliasTarget': {
+                    'HostedZoneId': 'Z2FDTNDATAQYW2',  # CloudFront zone
+                    'DNSName': 'd123.cloudfront.net',
+                    'EvaluateTargetHealth': False
+                }
+            }
+        }]
+    }
+)
+
+# Create health check
+health_check = route53.create_health_check(
+    HealthCheckConfig={
+        'Type': 'HTTPS',
+        'ResourcePath': '/health',
+        'FullyQualifiedDomainName': 'www.example.com',
+        'RequestInterval': 30,
+        'FailureThreshold': 3
+    }
+)`,
+    interviewTopics: [
+      'Routing policies (simple, weighted, latency, failover, geolocation)',
+      'Health checks and failover',
+      'Alias vs CNAME records',
+      'Traffic flow and traffic policies',
+      'Private hosted zones',
+      'Route 53 Resolver',
+      'DNSSEC',
+      'Integration with CloudFront and ELB'
+    ],
+    bestPractices: [
+      'Use alias records for AWS resources',
+      'Implement health checks for failover',
+      'Use geo-proximity routing for global apps',
+      'Enable query logging',
+      'Implement DNSSEC for security',
+      'Use traffic policies for complex routing'
+    ]
+  },
+
+  {
+    id: 'elasticache',
+    title: 'Amazon ElastiCache',
+    description: 'Fully managed in-memory caching service (Redis & Memcached)',
+    icon: '⚡',
+    category: 'Database',
+    codingRequired: true,
+    programmingLanguages: ['Python', 'Node.js', 'Java', 'Any with Redis/Memcached client'],
+    useCases: [
+      'Database caching',
+      'Session storage',
+      'Real-time analytics',
+      'Leaderboards and gaming',
+      'Pub/sub messaging',
+      'Rate limiting'
+    ],
+    keyFeatures: [
+      'Redis and Memcached engines',
+      'Automatic failover',
+      'Multi-AZ replication',
+      'Encryption at rest and in transit',
+      'Automatic backups (Redis)',
+      'Cluster mode for scalability'
+    ],
+    codeExample: `import redis
+import json
+
+# Connect to ElastiCache Redis
+r = redis.Redis(
+    host='my-cluster.abc123.0001.use1.cache.amazonaws.com',
+    port=6379,
+    decode_responses=True
+)
+
+# Cache database query results
+def get_user(user_id):
+    # Check cache first
+    cache_key = f"user:{user_id}"
+    cached_user = r.get(cache_key)
+
+    if cached_user:
+        print("Cache hit!")
+        return json.loads(cached_user)
+
+    # Cache miss - query database
+    print("Cache miss - querying database")
+    user = query_database(user_id)  # Expensive DB query
+
+    # Store in cache with 1 hour TTL
+    r.setex(cache_key, 3600, json.dumps(user))
+
+    return user
+
+# Session management
+def store_session(session_id, user_data):
+    r.setex(f"session:{session_id}", 1800, json.dumps(user_data))
+
+def get_session(session_id):
+    data = r.get(f"session:{session_id}")
+    return json.loads(data) if data else None
+
+# Rate limiting
+def is_rate_limited(user_id, max_requests=100):
+    key = f"rate_limit:{user_id}:{int(time.time() / 60)}"
+    current = r.incr(key)
+    r.expire(key, 60)
+    return current > max_requests`,
+    interviewTopics: [
+      'Redis vs Memcached',
+      'Caching strategies (lazy loading, write-through)',
+      'Cache invalidation',
+      'Cluster mode vs non-cluster mode',
+      'Replication and failover',
+      'Data types in Redis',
+      'Pub/sub messaging',
+      'Cost optimization'
+    ],
+    bestPractices: [
+      'Implement appropriate TTLs',
+      'Use connection pooling',
+      'Enable Multi-AZ for high availability',
+      'Monitor cache hit ratio',
+      'Use cluster mode for large datasets',
+      'Implement circuit breakers'
+    ]
+  },
+
+  {
+    id: 'elastic-beanstalk',
+    title: 'AWS Elastic Beanstalk',
+    description: 'Easy-to-use service for deploying and scaling web applications',
+    icon: '🌱',
+    category: 'Compute',
+    codingRequired: true,
+    programmingLanguages: ['Python', 'Node.js', 'Java', 'PHP', 'Ruby', '.NET', 'Go'],
+    useCases: [
+      'Web application hosting',
+      'API backends',
+      'Microservices',
+      'Mobile app backends',
+      'Quick prototyping',
+      'Legacy application migration'
+    ],
+    keyFeatures: [
+      'Automatic capacity provisioning',
+      'Load balancing',
+      'Auto-scaling',
+      'Health monitoring',
+      'Platform updates',
+      'Multiple environment support'
+    ],
+    codeExample: `# .ebextensions/01_app.config
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: application.py
+  aws:autoscaling:launchconfiguration:
+    InstanceType: t3.micro
+  aws:autoscaling:asg:
+    MinSize: 2
+    MaxSize: 10
+  aws:elasticbeanstalk:environment:
+    EnvironmentType: LoadBalanced
+    LoadBalancerType: application
+
+# application.py
+from flask import Flask, jsonify
+
+application = Flask(__name__)
+
+@application.route('/')
+def index():
+    return jsonify({
+        'message': 'Hello from Elastic Beanstalk!',
+        'status': 'healthy'
+    })
+
+@application.route('/health')
+def health():
+    return jsonify({'status': 'ok'})
+
+if __name__ == '__main__':
+    application.run(host='0.0.0.0', port=5000)`,
+    interviewTopics: [
+      'Beanstalk vs ECS vs EC2',
+      'Environment tiers (web server vs worker)',
+      'Deployment policies',
+      '.ebextensions configuration',
+      'Platform versions and updates',
+      'Blue/green deployments',
+      'Integration with RDS and other services',
+      'Monitoring and logging'
+    ],
+    bestPractices: [
+      'Use .ebextensions for configuration',
+      'Implement health checks',
+      'Use immutable deployments for safety',
+      'Store secrets in Secrets Manager',
+      'Enable enhanced health reporting',
+      'Use saved configurations for consistency'
+    ]
   }
 ];
 
@@ -1171,5 +1671,6 @@ export const categories = [
   'Security',
   'Developer Tools',
   'Analytics',
-  'Machine Learning'
+  'Machine Learning',
+  'Integration'
 ];

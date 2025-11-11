@@ -17,7 +17,7 @@ export default function Navigation() {
             <span className="text-xl font-bold text-gray-900">AWS Coding Guide</span>
           </Link>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             <Link href="/" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
               Home
             </Link>
@@ -27,11 +27,14 @@ export default function Navigation() {
             <Link href="/services" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
               Services
             </Link>
+            <Link href="/devops" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+              DevOps
+            </Link>
             <Link href="/playground" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
               Playground
             </Link>
             <Link href="/interview" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
-              Interview Prep
+              Interview
             </Link>
           </div>
 
@@ -58,11 +61,14 @@ export default function Navigation() {
             <Link href="/services" className="block text-gray-700 hover:text-amber-500 font-medium">
               Services
             </Link>
+            <Link href="/devops" className="block text-gray-700 hover:text-amber-500 font-medium">
+              DevOps
+            </Link>
             <Link href="/playground" className="block text-gray-700 hover:text-amber-500 font-medium">
               Playground
             </Link>
             <Link href="/interview" className="block text-gray-700 hover:text-amber-500 font-medium">
-              Interview Prep
+              Interview
             </Link>
           </div>
         </div>
