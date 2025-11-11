@@ -27,6 +27,9 @@ export default function Navigation() {
             <Link href="/services" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
               Services
             </Link>
+            <Link href="/playground" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+              Playground
+            </Link>
             <Link href="/interview" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
               Interview Prep
             </Link>
@@ -54,6 +57,9 @@ export default function Navigation() {
             </Link>
             <Link href="/services" className="block text-gray-700 hover:text-amber-500 font-medium">
               Services
+            </Link>
+            <Link href="/playground" className="block text-gray-700 hover:text-amber-500 font-medium">
+              Playground
             </Link>
             <Link href="/interview" className="block text-gray-700 hover:text-amber-500 font-medium">
               Interview Prep

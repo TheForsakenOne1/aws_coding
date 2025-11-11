@@ -109,6 +109,21 @@ export default function Home() {
                 3
               </div>
               <div className="flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Code Playground</h3>
+                <p className="text-gray-600 mb-3">
+                  Practice with interactive code examples and templates for all services
+                </p>
+                <a href="/playground" className="text-amber-600 font-semibold hover:text-amber-700">
+                  Try Playground →
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 p-6 bg-white border-2 border-amber-200 rounded-xl hover:border-amber-400 transition-all">
+              <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold text-xl">
+                4
+              </div>
+              <div className="flex-grow">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Interview Preparation</h3>
                 <p className="text-gray-600 mb-3">
                   Practice common AWS interview questions and learn best practices
