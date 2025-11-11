@@ -17,23 +17,35 @@ export default function Navigation() {
             <span className="text-xl font-bold text-gray-900">AWS Coding Guide</span>
           </Link>
 
-          <div className="hidden md:flex space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+          <div className="hidden md:flex space-x-2 lg:space-x-3">
+            <Link href="/" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
               Home
             </Link>
-            <Link href="/basics" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
-              AWS Basics
+            <Link href="/basics" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+              Basics
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+            <Link href="/services" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
               Services
             </Link>
-            <Link href="/devops" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+            <Link href="/compare" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+              Compare
+            </Link>
+            <Link href="/learning-paths" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+              Learning
+            </Link>
+            <Link href="/glossary" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+              Glossary
+            </Link>
+            <Link href="/devops" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
               DevOps
             </Link>
-            <Link href="/playground" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+            <Link href="/playground" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
               Playground
             </Link>
-            <Link href="/interview" className="text-gray-700 hover:text-amber-500 transition-colors font-medium">
+            <Link href="/cheatsheets" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+              Cheat Sheets
+            </Link>
+            <Link href="/interview" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
               Interview
             </Link>
           </div>
@@ -61,11 +73,23 @@ export default function Navigation() {
             <Link href="/services" className="block text-gray-700 hover:text-amber-500 font-medium">
               Services
             </Link>
+            <Link href="/compare" className="block text-gray-700 hover:text-amber-500 font-medium">
+              Compare Services
+            </Link>
+            <Link href="/learning-paths" className="block text-gray-700 hover:text-amber-500 font-medium">
+              Learning Paths
+            </Link>
+            <Link href="/glossary" className="block text-gray-700 hover:text-amber-500 font-medium">
+              Glossary
+            </Link>
             <Link href="/devops" className="block text-gray-700 hover:text-amber-500 font-medium">
               DevOps
             </Link>
             <Link href="/playground" className="block text-gray-700 hover:text-amber-500 font-medium">
               Playground
+            </Link>
+            <Link href="/cheatsheets" className="block text-gray-700 hover:text-amber-500 font-medium">
+              Cheat Sheets
             </Link>
             <Link href="/interview" className="block text-gray-700 hover:text-amber-500 font-medium">
               Interview
