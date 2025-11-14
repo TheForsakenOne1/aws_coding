@@ -55,19 +55,19 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {filteredProjects.map(project => (
             <div
               key={project.id}
-              className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 transition-all p-8"
+              className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 transition-all p-4 sm:p-8"
             >
-              <div className="flex items-start space-x-4 mb-4">
-                <div className="text-5xl">{project.icon}</div>
+              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                <div className="text-4xl sm:text-5xl flex-shrink-0">{project.icon}</div>
                 <div className="flex-grow">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600">{project.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{project.description}</p>
                 </div>
               </div>
 

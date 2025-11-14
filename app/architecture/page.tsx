@@ -45,33 +45,33 @@ export default function ArchitecturePage() {
           ))}
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {filteredPatterns.map(pattern => (
             <div key={pattern.id} className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
-              <div className="p-8 bg-gradient-to-r from-blue-50 to-white">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="text-5xl">{pattern.icon}</div>
+              <div className="p-4 sm:p-8 bg-gradient-to-r from-blue-50 to-white">
+                <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                  <div className="text-4xl sm:text-5xl flex-shrink-0">{pattern.icon}</div>
                   <div>
                     <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-2">
                       {pattern.category}
                     </span>
-                    <h3 className="text-3xl font-bold text-gray-900">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
                       {pattern.title}
                     </h3>
-                    <p className="text-gray-600 mt-2">{pattern.description}</p>
+                    <p className="text-sm sm:text-base text-gray-600 mt-2">{pattern.description}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8">
-                <div className="bg-gray-50 rounded-xl p-6 mb-6">
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">🏗️ Architecture Diagram</h4>
+              <div className="p-4 sm:p-8">
+                <div className="bg-gray-50 rounded-xl p-4 sm:p-6 mb-6">
+                  <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">🏗️ Architecture Diagram</h4>
                   <p className="text-gray-700 font-mono text-sm">{pattern.diagram}</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-3">🎯 Use Cases</h4>
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">🎯 Use Cases</h4>
                     <ul className="space-y-2">
                       {pattern.useCases.map((useCase, index) => (
                         <li key={index} className="text-gray-600 flex items-start">
@@ -83,7 +83,7 @@ export default function ArchitecturePage() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-3">🔧 Key Components</h4>
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">🔧 Key Components</h4>
                     <ul className="space-y-2">
                       {pattern.components.map((component, index) => (
                         <li key={index} className="text-gray-600 flex items-start">
@@ -95,9 +95,9 @@ export default function ArchitecturePage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                    <h4 className="text-lg font-bold text-green-900 mb-3">✅ Benefits</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+                  <div className="bg-green-50 border border-green-200 rounded-xl p-4 sm:p-6">
+                    <h4 className="text-base sm:text-lg font-bold text-green-900 mb-3">✅ Benefits</h4>
                     <ul className="space-y-2">
                       {pattern.benefits.map((benefit, index) => (
                         <li key={index} className="text-sm text-green-800 flex items-start">
@@ -108,8 +108,8 @@ export default function ArchitecturePage() {
                     </ul>
                   </div>
 
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
-                    <h4 className="text-lg font-bold text-amber-900 mb-3">⚠️ Considerations</h4>
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 sm:p-6">
+                    <h4 className="text-base sm:text-lg font-bold text-amber-900 mb-3">⚠️ Considerations</h4>
                     <ul className="space-y-2">
                       {pattern.considerations.map((consideration, index) => (
                         <li key={index} className="text-sm text-amber-800 flex items-start">
@@ -121,8 +121,8 @@ export default function ArchitecturePage() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <h4 className="text-lg font-bold text-blue-900 mb-3">💡 Example Implementation</h4>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-6">
+                  <h4 className="text-base sm:text-lg font-bold text-blue-900 mb-3">💡 Example Implementation</h4>
                   <p className="text-blue-800">{pattern.exampleImplementation}</p>
                 </div>
               </div>

@@ -63,15 +63,15 @@ export default function TutorialsPage() {
               key={tutorial.id}
               className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 transition-all overflow-hidden"
             >
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-4xl">{tutorial.icon}</div>
+              <div className="p-4 sm:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="text-4xl flex-shrink-0">{tutorial.icon}</div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                         {tutorial.title}
                       </h3>
-                      <p className="text-gray-600">{tutorial.description}</p>
+                      <p className="text-sm sm:text-base text-gray-600">{tutorial.description}</p>
                     </div>
                   </div>
                 </div>
@@ -127,21 +127,21 @@ export default function TutorialsPage() {
               </div>
 
               {expandedTutorial === tutorial.id && (
-                <div className="border-t-2 border-gray-200 bg-gray-50 p-8">
-                  <h4 className="text-2xl font-bold text-gray-900 mb-6">Tutorial Steps</h4>
+                <div className="border-t-2 border-gray-200 bg-gray-50 p-4 sm:p-8">
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Tutorial Steps</h4>
 
-                  <div className="space-y-8">
+                  <div className="space-y-6 sm:space-y-8">
                     {tutorial.steps.map((step, index) => (
-                      <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
-                        <div className="flex items-start space-x-4 mb-4">
-                          <div className="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold">
+                      <div key={index} className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200">
+                        <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                          <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold text-sm sm:text-base">
                             {index + 1}
                           </div>
                           <div className="flex-grow">
-                            <h5 className="text-xl font-bold text-gray-900 mb-2">
+                            <h5 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                               {step.title}
                             </h5>
-                            <p className="text-gray-600">{step.description}</p>
+                            <p className="text-sm sm:text-base text-gray-600">{step.description}</p>
                           </div>
                         </div>
 

@@ -46,31 +46,31 @@ export default function BestPracticesPage() {
           ))}
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {filteredPractices.map(practice => (
             <div key={practice.id} className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
-              <div className="p-8 bg-gradient-to-r from-amber-50 to-white">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="text-5xl">{practice.icon}</div>
+              <div className="p-4 sm:p-8 bg-gradient-to-r from-amber-50 to-white">
+                <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                  <div className="text-4xl sm:text-5xl flex-shrink-0">{practice.icon}</div>
                   <div>
                     <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-2">
                       {practice.category}
                     </span>
-                    <h3 className="text-3xl font-bold text-gray-900">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
                       {practice.title}
                     </h3>
-                    <p className="text-gray-600 mt-2">{practice.description}</p>
+                    <p className="text-sm sm:text-base text-gray-600 mt-2">{practice.description}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8">
-                <h4 className="text-2xl font-bold text-gray-900 mb-6">✅ Best Practices</h4>
-                <div className="space-y-6 mb-8">
+              <div className="p-4 sm:p-8">
+                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">✅ Best Practices</h4>
+                <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                   {practice.practices.map((item, index) => (
-                    <div key={index} className="bg-green-50 border border-green-200 rounded-xl p-6">
-                      <h5 className="text-xl font-bold text-green-900 mb-2">{item.title}</h5>
-                      <p className="text-green-800 mb-4">{item.description}</p>
+                    <div key={index} className="bg-green-50 border border-green-200 rounded-xl p-4 sm:p-6">
+                      <h5 className="text-lg sm:text-xl font-bold text-green-900 mb-2">{item.title}</h5>
+                      <p className="text-sm sm:text-base text-green-800 mb-4">{item.description}</p>
                       <div>
                         <p className="font-semibold text-green-900 mb-2">Benefits:</p>
                         <ul className="space-y-1">
@@ -88,12 +88,12 @@ export default function BestPracticesPage() {
 
                 {practice.antiPatterns.length > 0 && (
                   <>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-6">❌ Anti-Patterns to Avoid</h4>
-                    <div className="space-y-6 mb-8">
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">❌ Anti-Patterns to Avoid</h4>
+                    <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                       {practice.antiPatterns.map((antiPattern, index) => (
-                        <div key={index} className="bg-red-50 border border-red-200 rounded-xl p-6">
-                          <h5 className="text-xl font-bold text-red-900 mb-2">{antiPattern.title}</h5>
-                          <p className="text-red-800 mb-4">{antiPattern.description}</p>
+                        <div key={index} className="bg-red-50 border border-red-200 rounded-xl p-4 sm:p-6">
+                          <h5 className="text-lg sm:text-xl font-bold text-red-900 mb-2">{antiPattern.title}</h5>
+                          <p className="text-sm sm:text-base text-red-800 mb-4">{antiPattern.description}</p>
                           <div className="mb-4">
                             <p className="font-semibold text-red-900 mb-2">Consequences:</p>
                             <ul className="space-y-1">
@@ -117,11 +117,11 @@ export default function BestPracticesPage() {
 
                 {practice.codeExamples && practice.codeExamples.length > 0 && (
                   <>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-6">📝 Code Examples</h4>
-                    <div className="space-y-6">
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">📝 Code Examples</h4>
+                    <div className="space-y-4 sm:space-y-6">
                       {practice.codeExamples.map((example, index) => (
                         <div key={index}>
-                          <h5 className="text-lg font-bold text-gray-900 mb-3">{example.title}</h5>
+                          <h5 className="text-base sm:text-lg font-bold text-gray-900 mb-3">{example.title}</h5>
                           <CodeBlock code={example.code} language={example.language} />
                           <p className="text-gray-600 mt-3 text-sm italic">{example.explanation}</p>
                         </div>

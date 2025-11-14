@@ -63,24 +63,24 @@ export default function CertificationsPage() {
               key={cert.id}
               className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 transition-all overflow-hidden"
             >
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-5xl">{cert.icon}</div>
+              <div className="p-4 sm:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="text-4xl sm:text-5xl flex-shrink-0">{cert.icon}</div>
                     <div>
                       <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2 ${getLevelColor(cert.level)}`}>
                         {cert.level}
                       </span>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                         {cert.title}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-2">Exam Code: {cert.code}</p>
-                      <p className="text-gray-600">{cert.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-500 mb-2">Exam Code: {cert.code}</p>
+                      <p className="text-sm sm:text-base text-gray-600">{cert.description}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-600">Duration</p>
                     <p className="font-bold text-gray-900">{cert.examDuration}</p>
@@ -108,10 +108,10 @@ export default function CertificationsPage() {
               </div>
 
               {expandedCert === cert.id && (
-                <div className="border-t-2 border-gray-200 bg-gray-50 p-8">
-                  <div className="space-y-8">
+                <div className="border-t-2 border-gray-200 bg-gray-50 p-4 sm:p-8">
+                  <div className="space-y-6 sm:space-y-8">
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4">📋 Prerequisites</h4>
+                      <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">📋 Prerequisites</h4>
                       <ul className="space-y-2">
                         {cert.prerequisites.map((prereq, index) => (
                           <li key={index} className="text-gray-600 flex items-start">
@@ -123,12 +123,12 @@ export default function CertificationsPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4">📚 Exam Domains</h4>
+                      <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">📚 Exam Domains</h4>
                       <div className="space-y-4">
                         {cert.domains.map((domain, index) => (
-                          <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
-                            <div className="flex justify-between items-start mb-3">
-                              <h5 className="text-xl font-bold text-gray-900">{domain.name}</h5>
+                          <div key={index} className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200">
+                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
+                              <h5 className="text-lg sm:text-xl font-bold text-gray-900">{domain.name}</h5>
                               <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">
                                 {domain.weight}
                               </span>
@@ -147,8 +147,8 @@ export default function CertificationsPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4">📖 Study Resources</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">📖 Study Resources</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         {cert.studyResources.map((resource, index) => (
                           <div key={index} className="bg-white rounded-lg p-4 border border-gray-200">
                             <div className="flex justify-between items-start mb-2">
@@ -169,8 +169,8 @@ export default function CertificationsPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-4">💡 Exam Tips</h4>
-                      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                      <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">💡 Exam Tips</h4>
+                      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-6">
                         <ul className="space-y-2">
                           {cert.tips.map((tip, index) => (
                             <li key={index} className="text-blue-800 flex items-start">
