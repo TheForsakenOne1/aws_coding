@@ -16,25 +16,27 @@ export const blogPosts: BlogPost[] = [
     slug: 'getting-started-with-aws-lambda',
     title: 'Getting Started with AWS Lambda: A Complete Guide',
     excerpt: 'Learn how to build and deploy your first serverless function with AWS Lambda, from setup to production.',
-    content: `AWS Lambda has revolutionized the way we build and deploy applications. In this comprehensive guide, we'll walk through everything you need to know to get started with Lambda.
+    content: `
+      <p>AWS Lambda has revolutionized the way we build and deploy applications. In this comprehensive guide, we'll walk through everything you need to know to get started with Lambda.</p>
 
-## What is AWS Lambda?
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">What is AWS Lambda?</h2>
 
-AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. You can use Lambda to extend other AWS services with custom logic, or create your own backend services.
+      <p>AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. You can use Lambda to extend other AWS services with custom logic, or create your own backend services.</p>
 
-## Key Benefits
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Key Benefits</h2>
 
-1. **No Server Management**: AWS handles all the infrastructure
-2. **Automatic Scaling**: Scales automatically from a few requests to thousands per second
-3. **Pay-per-Use**: Only pay for the compute time you consume
-4. **Built-in High Availability**: Lambda runs across multiple availability zones
+      <ol style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;"><strong>No Server Management</strong>: AWS handles all the infrastructure</li>
+        <li style="margin-bottom: 0.5em;"><strong>Automatic Scaling</strong>: Scales automatically from a few requests to thousands per second</li>
+        <li style="margin-bottom: 0.5em;"><strong>Pay-per-Use</strong>: Only pay for the compute time you consume</li>
+        <li style="margin-bottom: 0.5em;"><strong>Built-in High Availability</strong>: Lambda runs across multiple availability zones</li>
+      </ol>
 
-## Your First Lambda Function
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Your First Lambda Function</h2>
 
-Let's create a simple Lambda function that processes JSON data:
+      <p>Let's create a simple Lambda function that processes JSON data:</p>
 
-\`\`\`python
-import json
+      <pre style="background-color: #f5f5f5; padding: 1em; border-radius: 0.5em; overflow-x: auto; margin: 1em 0;"><code>import json
 
 def lambda_handler(event, context):
     # Extract data from event
@@ -49,20 +51,22 @@ def lambda_handler(event, context):
         'body': json.dumps({
             'message': message
         })
-    }
-\`\`\`
+    }</code></pre>
 
-## Best Practices
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Best Practices</h2>
 
-- Keep functions small and focused
-- Use environment variables for configuration
-- Implement proper error handling
-- Monitor with CloudWatch Logs
-- Use Lambda layers for shared dependencies
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Keep functions small and focused</li>
+        <li style="margin-bottom: 0.5em;">Use environment variables for configuration</li>
+        <li style="margin-bottom: 0.5em;">Implement proper error handling</li>
+        <li style="margin-bottom: 0.5em;">Monitor with CloudWatch Logs</li>
+        <li style="margin-bottom: 0.5em;">Use Lambda layers for shared dependencies</li>
+      </ul>
 
-## Conclusion
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Conclusion</h2>
 
-AWS Lambda is a powerful service that can help you build scalable applications without managing servers. Start small, experiment, and gradually build more complex serverless architectures.`,
+      <p>AWS Lambda is a powerful service that can help you build scalable applications without managing servers. Start small, experiment, and gradually build more complex serverless architectures.</p>
+    `,
     author: 'AWS Coding Guide',
     date: '2024-03-15',
     category: 'Serverless',
@@ -74,38 +78,46 @@ AWS Lambda is a powerful service that can help you build scalable applications w
     slug: 'dynamodb-design-patterns',
     title: 'DynamoDB Design Patterns for Scalable Applications',
     excerpt: 'Master DynamoDB with proven design patterns for single-table design, access patterns, and query optimization.',
-    content: `DynamoDB is a powerful NoSQL database, but it requires a different mindset than traditional relational databases. Let's explore key design patterns.
+    content: `
+      <p>DynamoDB is a powerful NoSQL database, but it requires a different mindset than traditional relational databases. Let's explore key design patterns.</p>
 
-## Single-Table Design
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Single-Table Design</h2>
 
-One of the most important concepts in DynamoDB is single-table design. Instead of creating multiple tables like in SQL, you store different entity types in one table.
+      <p>One of the most important concepts in DynamoDB is single-table design. Instead of creating multiple tables like in SQL, you store different entity types in one table.</p>
 
-### Why Single-Table?
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">Why Single-Table?</h3>
 
-- Reduces costs
-- Simplifies access patterns
-- Better performance
-- Fewer API calls
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Reduces costs</li>
+        <li style="margin-bottom: 0.5em;">Simplifies access patterns</li>
+        <li style="margin-bottom: 0.5em;">Better performance</li>
+        <li style="margin-bottom: 0.5em;">Fewer API calls</li>
+      </ul>
 
-## Access Patterns First
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Access Patterns First</h2>
 
-Before designing your table, list all your access patterns:
+      <p>Before designing your table, list all your access patterns:</p>
 
-1. Get user by ID
-2. Get all orders for a user
-3. Get recent orders
-4. Find orders by status
+      <ol style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Get user by ID</li>
+        <li style="margin-bottom: 0.5em;">Get all orders for a user</li>
+        <li style="margin-bottom: 0.5em;">Get recent orders</li>
+        <li style="margin-bottom: 0.5em;">Find orders by status</li>
+      </ol>
 
-## Partition Key Strategy
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Partition Key Strategy</h2>
 
-Choose partition keys with high cardinality to distribute load evenly:
+      <p>Choose partition keys with high cardinality to distribute load evenly:</p>
 
-- ✅ Good: userId, orderId, email
-- ❌ Bad: status, category (low cardinality)
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">✅ <strong>Good</strong>: userId, orderId, email</li>
+        <li style="margin-bottom: 0.5em;">❌ <strong>Bad</strong>: status, category (low cardinality)</li>
+      </ul>
 
-## Conclusion
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Conclusion</h2>
 
-DynamoDB design requires upfront planning but delivers incredible performance and scale.`,
+      <p>DynamoDB design requires upfront planning but delivers incredible performance and scale.</p>
+    `,
     author: 'AWS Coding Guide',
     date: '2024-03-10',
     category: 'Database',
@@ -117,59 +129,56 @@ DynamoDB design requires upfront planning but delivers incredible performance an
     slug: 'cost-optimization-strategies',
     title: '10 AWS Cost Optimization Strategies That Work',
     excerpt: 'Practical strategies to reduce your AWS bill by 30-50% without sacrificing performance or reliability.',
-    content: `AWS costs can spiral out of control if not managed properly. Here are 10 proven strategies to optimize your spending.
+    content: `
+      <p>AWS costs can spiral out of control if not managed properly. Here are 10 proven strategies to optimize your spending.</p>
 
-## 1. Right-Size Your Instances
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">1. Right-Size Your Instances</h2>
+      <p>Use AWS Cost Explorer and Compute Optimizer to identify over-provisioned resources. Most companies can reduce instance sizes by 20-40%.</p>
 
-Use AWS Cost Explorer and Compute Optimizer to identify over-provisioned resources. Most companies can reduce instance sizes by 20-40%.
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">2. Use Reserved Instances</h2>
+      <p>For predictable workloads, Reserved Instances provide up to 72% savings compared to On-Demand pricing.</p>
 
-## 2. Use Reserved Instances
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">3. Implement Auto Scaling</h2>
+      <p>Match capacity to demand automatically. Don't pay for idle resources during off-peak hours.</p>
 
-For predictable workloads, Reserved Instances provide up to 72% savings compared to On-Demand pricing.
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">4. Clean Up Unused Resources</h2>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Delete old EBS snapshots</li>
+        <li style="margin-bottom: 0.5em;">Remove unused Elastic IPs</li>
+        <li style="margin-bottom: 0.5em;">Delete old AMIs</li>
+        <li style="margin-bottom: 0.5em;">Clean up unused Load Balancers</li>
+      </ul>
 
-## 3. Implement Auto Scaling
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">5. Use S3 Lifecycle Policies</h2>
+      <p>Automatically transition objects to cheaper storage classes:</p>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Standard → Intelligent-Tiering</li>
+        <li style="margin-bottom: 0.5em;">Intelligent-Tiering → Glacier</li>
+        <li style="margin-bottom: 0.5em;">Set expiration for temporary data</li>
+      </ul>
 
-Match capacity to demand automatically. Don't pay for idle resources during off-peak hours.
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">6. Spot Instances for Fault-Tolerant Workloads</h2>
+      <p>Save up to 90% for batch jobs, data analysis, and CI/CD.</p>
 
-## 4. Clean Up Unused Resources
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">7. Monitor with AWS Budgets</h2>
+      <p>Set up budget alerts to catch cost overruns early.</p>
 
-- Delete old EBS snapshots
-- Remove unused Elastic IPs
-- Delete old AMIs
-- Clean up unused Load Balancers
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">8. Use Savings Plans</h2>
+      <p>More flexible than Reserved Instances, up to 72% savings.</p>
 
-## 5. Use S3 Lifecycle Policies
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">9. Optimize Data Transfer</h2>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Use CloudFront for frequently accessed content</li>
+        <li style="margin-bottom: 0.5em;">Keep data transfer within the same region</li>
+        <li style="margin-bottom: 0.5em;">Use VPC endpoints for AWS services</li>
+      </ul>
 
-Automatically transition objects to cheaper storage classes:
-- Standard → Intelligent-Tiering
-- Intelligent-Tiering → Glacier
-- Set expiration for temporary data
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">10. Regular Cost Reviews</h2>
+      <p>Schedule monthly reviews of your AWS bill. Small savings add up!</p>
 
-## 6. Spot Instances for Fault-Tolerant Workloads
-
-Save up to 90% for batch jobs, data analysis, and CI/CD.
-
-## 7. Monitor with AWS Budgets
-
-Set up budget alerts to catch cost overruns early.
-
-## 8. Use Savings Plans
-
-More flexible than Reserved Instances, up to 72% savings.
-
-## 9. Optimize Data Transfer
-
-- Use CloudFront for frequently accessed content
-- Keep data transfer within the same region
-- Use VPC endpoints for AWS services
-
-## 10. Regular Cost Reviews
-
-Schedule monthly reviews of your AWS bill. Small savings add up!
-
-## Conclusion
-
-Cost optimization is an ongoing process. Implement these strategies systematically for significant savings.`,
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Conclusion</h2>
+      <p>Cost optimization is an ongoing process. Implement these strategies systematically for significant savings.</p>
+    `,
     author: 'AWS Coding Guide',
     date: '2024-03-05',
     category: 'Cost Optimization',
@@ -181,33 +190,30 @@ Cost optimization is an ongoing process. Implement these strategies systematical
     slug: 'building-cicd-pipeline',
     title: 'Building a Production-Ready CI/CD Pipeline on AWS',
     excerpt: 'Step-by-step guide to implementing automated deployment pipelines using AWS native services.',
-    content: `A well-designed CI/CD pipeline is essential for modern application development. Let's build one using AWS services.
+    content: `
+      <p>A well-designed CI/CD pipeline is essential for modern application development. Let's build one using AWS services.</p>
 
-## Pipeline Overview
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Pipeline Overview</h2>
+      <p>Our pipeline will include:</p>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Source control integration</li>
+        <li style="margin-bottom: 0.5em;">Automated builds</li>
+        <li style="margin-bottom: 0.5em;">Testing</li>
+        <li style="margin-bottom: 0.5em;">Staging deployment</li>
+        <li style="margin-bottom: 0.5em;">Production deployment with approval</li>
+      </ul>
 
-Our pipeline will include:
-- Source control integration
-- Automated builds
-- Testing
-- Staging deployment
-- Production deployment with approval
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Architecture</h2>
+      <p><strong>GitHub → CodePipeline → CodeBuild → ECS/Lambda</strong></p>
 
-## Architecture
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Step 1: Source Stage</h2>
+      <p>Connect your GitHub repository to CodePipeline. Every push to main triggers the pipeline.</p>
 
-GitHub → CodePipeline → CodeBuild → ECS/Lambda
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Step 2: Build Stage</h2>
+      <p>CodeBuild compiles your application, runs tests, and creates deployment artifacts.</p>
+      <p>Example buildspec.yml:</p>
 
-## Step 1: Source Stage
-
-Connect your GitHub repository to CodePipeline. Every push to main triggers the pipeline.
-
-## Step 2: Build Stage
-
-CodeBuild compiles your application, runs tests, and creates deployment artifacts.
-
-Example buildspec.yml:
-
-\`\`\`yaml
-version: 0.2
+      <pre style="background-color: #f5f5f5; padding: 1em; border-radius: 0.5em; overflow-x: auto; margin: 1em 0;"><code>version: 0.2
 phases:
   pre_build:
     commands:
@@ -222,31 +228,28 @@ phases:
       - docker push myapp:latest
 artifacts:
   files:
-    - '**/*'
-\`\`\`
+    - '**/*'</code></pre>
 
-## Step 3: Deploy to Staging
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Step 3: Deploy to Staging</h2>
+      <p>Automatically deploy to staging environment for testing.</p>
 
-Automatically deploy to staging environment for testing.
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Step 4: Manual Approval</h2>
+      <p>Add manual approval gate before production.</p>
 
-## Step 4: Manual Approval
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Step 5: Deploy to Production</h2>
+      <p>Blue-green or canary deployment to production.</p>
 
-Add manual approval gate before production.
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Best Practices</h2>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Use Infrastructure as Code</li>
+        <li style="margin-bottom: 0.5em;">Implement automated rollback</li>
+        <li style="margin-bottom: 0.5em;">Monitor deployments</li>
+        <li style="margin-bottom: 0.5em;">Keep pipelines fast (&lt; 10 minutes)</li>
+      </ul>
 
-## Step 5: Deploy to Production
-
-Blue-green or canary deployment to production.
-
-## Best Practices
-
-- Use Infrastructure as Code
-- Implement automated rollback
-- Monitor deployments
-- Keep pipelines fast (< 10 minutes)
-
-## Conclusion
-
-A solid CI/CD pipeline improves code quality and deployment velocity.`,
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Conclusion</h2>
+      <p>A solid CI/CD pipeline improves code quality and deployment velocity.</p>
+    `,
     author: 'AWS Coding Guide',
     date: '2024-03-01',
     category: 'DevOps',
@@ -258,81 +261,95 @@ A solid CI/CD pipeline improves code quality and deployment velocity.`,
     slug: 'securing-aws-applications',
     title: 'Security Best Practices for AWS Applications',
     excerpt: 'Comprehensive security guide covering IAM, encryption, network security, and compliance.',
-    content: `Security should be a top priority for any AWS application. This guide covers essential security practices.
+    content: `
+      <p>Security should be a top priority for any AWS application. This guide covers essential security practices.</p>
 
-## 1. IAM Best Practices
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">1. IAM Best Practices</h2>
 
-### Enable MFA
-Always enable MFA for root account and privileged users.
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">Enable MFA</h3>
+      <p>Always enable MFA for root account and privileged users.</p>
 
-### Least Privilege
-Grant only the permissions required for a task.
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">Least Privilege</h3>
+      <p>Grant only the permissions required for a task.</p>
 
-### Use IAM Roles
-Instead of access keys, use IAM roles for applications.
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">Use IAM Roles</h3>
+      <p>Instead of access keys, use IAM roles for applications.</p>
 
-## 2. Encryption
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">2. Encryption</h2>
 
-### Data at Rest
-- Enable S3 bucket encryption
-- Use encrypted RDS instances
-- Encrypt EBS volumes
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">Data at Rest</h3>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Enable S3 bucket encryption</li>
+        <li style="margin-bottom: 0.5em;">Use encrypted RDS instances</li>
+        <li style="margin-bottom: 0.5em;">Encrypt EBS volumes</li>
+      </ul>
 
-### Data in Transit
-- Use HTTPS/TLS everywhere
-- Enable VPC endpoint policies
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">Data in Transit</h3>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Use HTTPS/TLS everywhere</li>
+        <li style="margin-bottom: 0.5em;">Enable VPC endpoint policies</li>
+      </ul>
 
-## 3. Network Security
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">3. Network Security</h2>
 
-### VPC Configuration
-- Use private subnets for databases
-- Implement security groups properly
-- Use NACLs for additional protection
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">VPC Configuration</h3>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Use private subnets for databases</li>
+        <li style="margin-bottom: 0.5em;">Implement security groups properly</li>
+        <li style="margin-bottom: 0.5em;">Use NACLs for additional protection</li>
+      </ul>
 
-### WAF and Shield
-- Deploy AWS WAF for application protection
-- Use Shield for DDoS protection
+      <h3 style="font-size: 1.2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">WAF and Shield</h3>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Deploy AWS WAF for application protection</li>
+        <li style="margin-bottom: 0.5em;">Use Shield for DDoS protection</li>
+      </ul>
 
-## 4. Monitoring and Logging
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">4. Monitoring and Logging</h2>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Enable CloudTrail for all regions</li>
+        <li style="margin-bottom: 0.5em;">Set up GuardDuty</li>
+        <li style="margin-bottom: 0.5em;">Configure Config rules</li>
+        <li style="margin-bottom: 0.5em;">Centralize logs in CloudWatch</li>
+      </ul>
 
-- Enable CloudTrail for all regions
-- Set up GuardDuty
-- Configure Config rules
-- Centralize logs in CloudWatch
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">5. Secrets Management</h2>
+      <p>Never hardcode credentials. Use:</p>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">AWS Secrets Manager</li>
+        <li style="margin-bottom: 0.5em;">Systems Manager Parameter Store</li>
+        <li style="margin-bottom: 0.5em;">Environment variables from secure sources</li>
+      </ul>
 
-## 5. Secrets Management
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">6. Regular Security Audits</h2>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Review IAM policies quarterly</li>
+        <li style="margin-bottom: 0.5em;">Run AWS Security Hub</li>
+        <li style="margin-bottom: 0.5em;">Perform vulnerability scans</li>
+        <li style="margin-bottom: 0.5em;">Keep software updated</li>
+      </ul>
 
-Never hardcode credentials. Use:
-- AWS Secrets Manager
-- Systems Manager Parameter Store
-- Environment variables from secure sources
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">7. Compliance</h2>
+      <ul style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Enable AWS Config for compliance checking</li>
+        <li style="margin-bottom: 0.5em;">Use Service Control Policies (SCPs)</li>
+        <li style="margin-bottom: 0.5em;">Implement tagging strategy</li>
+        <li style="margin-bottom: 0.5em;">Document security controls</li>
+      </ul>
 
-## 6. Regular Security Audits
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Incident Response Plan</h2>
+      <p>Have a plan for security incidents:</p>
+      <ol style="margin-left: 1.5em; margin-bottom: 1em;">
+        <li style="margin-bottom: 0.5em;">Detection</li>
+        <li style="margin-bottom: 0.5em;">Containment</li>
+        <li style="margin-bottom: 0.5em;">Investigation</li>
+        <li style="margin-bottom: 0.5em;">Recovery</li>
+        <li style="margin-bottom: 0.5em;">Post-mortem</li>
+      </ol>
 
-- Review IAM policies quarterly
-- Run AWS Security Hub
-- Perform vulnerability scans
-- Keep software updated
-
-## 7. Compliance
-
-- Enable AWS Config for compliance checking
-- Use Service Control Policies (SCPs)
-- Implement tagging strategy
-- Document security controls
-
-## Incident Response Plan
-
-Have a plan for security incidents:
-1. Detection
-2. Containment
-3. Investigation
-4. Recovery
-5. Post-mortem
-
-## Conclusion
-
-Security is not a one-time task but an ongoing process. Implement these practices systematically.`,
+      <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em;">Conclusion</h2>
+      <p>Security is not a one-time task but an ongoing process. Implement these practices systematically.</p>
+    `,
     author: 'AWS Coding Guide',
     date: '2024-02-25',
     category: 'Security',

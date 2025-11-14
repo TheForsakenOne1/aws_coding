@@ -66,9 +66,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             {post.excerpt}
           </div>
 
-          <div className="text-gray-700 whitespace-pre-line leading-relaxed">
-            {post.content}
-          </div>
+          <div
+            className="text-gray-700 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </div>
 
         <div className="mt-12 pt-8 border-t-2 border-gray-200">
