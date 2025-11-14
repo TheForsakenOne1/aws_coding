@@ -35,10 +35,10 @@ export default function ResourcesPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all ${
+                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-200 active:scale-95 ${
                   selectedCategory === category
-                    ? 'bg-amber-500 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-amber-500 text-white shadow-lg scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md hover:scale-105'
                 }`}
               >
                 {category}
@@ -54,10 +54,10 @@ export default function ResourcesPage() {
               <button
                 key={type}
                 onClick={() => setSelectedType(type)}
-                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all ${
+                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-200 active:scale-95 ${
                   selectedType === type
-                    ? 'bg-blue-500 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-blue-500 text-white shadow-lg scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md hover:scale-105'
                 }`}
               >
                 {type}
@@ -73,10 +73,10 @@ export default function ResourcesPage() {
               href={resource.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-white rounded-xl border-2 border-gray-200 hover:border-amber-400 transition-all p-6 group"
+              className="block bg-white rounded-xl border-2 border-gray-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 group"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="text-4xl">{resource.icon}</div>
+                <div className="text-4xl group-hover:scale-110 transition-transform duration-300">{resource.icon}</div>
                 <div className="flex flex-col gap-2">
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
                     {resource.type}

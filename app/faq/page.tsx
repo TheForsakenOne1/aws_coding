@@ -36,7 +36,7 @@ export default function FAQPage() {
               placeholder="Search questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-6 py-4 rounded-full border-2 border-gray-300 focus:border-amber-500 focus:outline-none text-lg"
+              className="w-full px-6 py-4 rounded-full border-2 border-gray-300 focus:border-amber-500 focus:ring-4 focus:ring-amber-200 focus:outline-none text-lg transition-all duration-200"
             />
           </div>
         </div>
@@ -51,10 +51,10 @@ export default function FAQPage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 active:scale-95 ${
                 selectedCategory === category
-                  ? 'bg-amber-500 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-amber-500 text-white shadow-lg scale-105'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md hover:scale-105'
               }`}
             >
               {category}
@@ -66,11 +66,11 @@ export default function FAQPage() {
           {filteredFAQs.map(faq => (
             <div
               key={faq.id}
-              className="bg-white rounded-xl border-2 border-gray-200 hover:border-amber-400 transition-all overflow-hidden"
+              className="bg-white rounded-xl border-2 border-gray-200 hover:border-amber-400 hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
               <button
                 onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
-                className="w-full p-6 text-left flex items-center justify-between"
+                className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
                 <div className="flex-grow pr-4">
                   <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold mb-2">
@@ -126,9 +126,9 @@ export default function FAQPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Link
             href="/basics"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">📚</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📚</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               AWS Basics
             </h3>
@@ -139,9 +139,9 @@ export default function FAQPage() {
 
           <Link
             href="/tutorials"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🛠️</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🛠️</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Tutorials
             </h3>
@@ -152,9 +152,9 @@ export default function FAQPage() {
 
           <Link
             href="/resources"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🔗</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔗</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               External Resources
             </h3>

@@ -132,9 +132,9 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Link
             href="/basics"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🌟</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🌟</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Start with Basics
             </h3>
@@ -145,9 +145,9 @@ export default function AboutPage() {
 
           <Link
             href="/tutorials"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">📖</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📖</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Follow Tutorials
             </h3>
@@ -158,9 +158,9 @@ export default function AboutPage() {
 
           <Link
             href="/projects"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🏗️</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏗️</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Build Projects
             </h3>

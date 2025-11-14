@@ -34,10 +34,10 @@ export default function ArchitecturePage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 active:scale-95 ${
                 selectedCategory === category
-                  ? 'bg-amber-500 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-amber-500 text-white shadow-lg scale-105'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md hover:scale-105'
               }`}
             >
               {category}
@@ -47,10 +47,10 @@ export default function ArchitecturePage() {
 
         <div className="space-y-8 sm:space-y-12">
           {filteredPatterns.map(pattern => (
-            <div key={pattern.id} className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
+            <div key={pattern.id} className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
               <div className="p-4 sm:p-8 bg-gradient-to-r from-blue-50 to-white">
                 <div className="flex items-start gap-3 sm:gap-4 mb-4">
-                  <div className="text-4xl sm:text-5xl flex-shrink-0">{pattern.icon}</div>
+                  <div className="text-4xl sm:text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{pattern.icon}</div>
                   <div>
                     <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-2">
                       {pattern.category}

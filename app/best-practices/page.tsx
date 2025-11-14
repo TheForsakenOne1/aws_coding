@@ -35,10 +35,10 @@ export default function BestPracticesPage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 active:scale-95 ${
                 selectedCategory === category
-                  ? 'bg-amber-500 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-amber-500 text-white shadow-lg scale-105'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md hover:scale-105'
               }`}
             >
               {category}
@@ -48,10 +48,10 @@ export default function BestPracticesPage() {
 
         <div className="space-y-8 sm:space-y-12">
           {filteredPractices.map(practice => (
-            <div key={practice.id} className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
+            <div key={practice.id} className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden group">
               <div className="p-4 sm:p-8 bg-gradient-to-r from-amber-50 to-white">
                 <div className="flex items-start gap-3 sm:gap-4 mb-4">
-                  <div className="text-4xl sm:text-5xl flex-shrink-0">{practice.icon}</div>
+                  <div className="text-4xl sm:text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{practice.icon}</div>
                   <div>
                     <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-2">
                       {practice.category}
@@ -143,9 +143,9 @@ export default function BestPracticesPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Link
             href="/architecture"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🏛️</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏛️</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Architecture Patterns
             </h3>
@@ -156,9 +156,9 @@ export default function BestPracticesPage() {
 
           <Link
             href="/services"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🔧</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🔧</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               AWS Services
             </h3>
@@ -169,9 +169,9 @@ export default function BestPracticesPage() {
 
           <Link
             href="/cheatsheets"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">📋</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📋</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Cheat Sheets
             </h3>

@@ -44,10 +44,10 @@ export default function ProjectsPage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 active:scale-95 ${
                 selectedCategory === category
-                  ? 'bg-amber-500 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-amber-500 text-white shadow-lg scale-105'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md hover:scale-105'
               }`}
             >
               {category}
@@ -59,10 +59,10 @@ export default function ProjectsPage() {
           {filteredProjects.map(project => (
             <div
               key={project.id}
-              className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 transition-all p-4 sm:p-8"
+              className="bg-white rounded-2xl border-2 border-gray-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-4 sm:p-8 group"
             >
               <div className="flex items-start gap-3 sm:gap-4 mb-4">
-                <div className="text-4xl sm:text-5xl flex-shrink-0">{project.icon}</div>
+                <div className="text-4xl sm:text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{project.icon}</div>
                 <div className="flex-grow">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                     {project.title}
@@ -133,7 +133,7 @@ export default function ProjectsPage() {
 
               <Link
                 href="/tutorials"
-                className="block w-full text-center px-6 py-3 bg-amber-500 text-white rounded-full font-semibold hover:bg-amber-600 transition-all"
+                className="block w-full text-center px-6 py-3 bg-amber-500 text-white rounded-full font-semibold hover:bg-amber-600 hover:shadow-lg active:scale-95 transition-all duration-200"
               >
                 View Related Tutorials
               </Link>
@@ -158,9 +158,9 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Link
             href="/tutorials"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">📖</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📖</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Follow Tutorials
             </h3>
@@ -171,9 +171,9 @@ export default function ProjectsPage() {
 
           <Link
             href="/architecture"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">🏛️</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏛️</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Architecture Patterns
             </h3>
@@ -184,9 +184,9 @@ export default function ProjectsPage() {
 
           <Link
             href="/best-practices"
-            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 transition-all group"
+            className="block p-8 bg-white rounded-2xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4">⭐</div>
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">⭐</div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
               Best Practices
             </h3>
