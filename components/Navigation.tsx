@@ -17,36 +17,36 @@ export default function Navigation() {
             <span className="text-xl font-bold text-gray-900">AWS Coding Guide</span>
           </Link>
 
-          <div className="hidden md:flex space-x-2 lg:space-x-3">
-            <Link href="/" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+          <div className="hidden md:flex space-x-1 lg:space-x-2">
+            <Link href="/" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
               Home
             </Link>
-            <Link href="/basics" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+            <Link href="/basics" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
               Basics
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
+            <Link href="/services" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
               Services
             </Link>
-            <Link href="/compare" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              Compare
+            <Link href="/tutorials" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Tutorials
             </Link>
-            <Link href="/learning-paths" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              Learning
+            <Link href="/projects" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Projects
             </Link>
-            <Link href="/glossary" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              Glossary
+            <Link href="/certifications" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Certifications
             </Link>
-            <Link href="/devops" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              DevOps
+            <Link href="/best-practices" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Best Practices
             </Link>
-            <Link href="/playground" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              Playground
+            <Link href="/architecture" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Architecture
             </Link>
-            <Link href="/cheatsheets" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              Cheat Sheets
+            <Link href="/blog" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Blog
             </Link>
-            <Link href="/interview" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm">
-              Interview
+            <Link href="/resources" className="text-gray-700 hover:text-amber-500 transition-colors font-medium text-xs lg:text-sm px-2 py-1">
+              Resources
             </Link>
           </div>
 
@@ -62,37 +62,55 @@ export default function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-4 py-4 space-y-3">
-            <Link href="/" className="block text-gray-700 hover:text-amber-500 font-medium">
+        <div className="md:hidden bg-white border-t border-gray-200 max-h-96 overflow-y-auto">
+          <div className="px-4 py-4 space-y-2">
+            <Link href="/" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               Home
             </Link>
-            <Link href="/basics" className="block text-gray-700 hover:text-amber-500 font-medium">
+            <Link href="/basics" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               AWS Basics
             </Link>
-            <Link href="/services" className="block text-gray-700 hover:text-amber-500 font-medium">
+            <Link href="/services" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               Services
             </Link>
-            <Link href="/compare" className="block text-gray-700 hover:text-amber-500 font-medium">
-              Compare Services
+            <Link href="/tutorials" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Tutorials
             </Link>
-            <Link href="/learning-paths" className="block text-gray-700 hover:text-amber-500 font-medium">
-              Learning Paths
+            <Link href="/projects" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Projects
             </Link>
-            <Link href="/glossary" className="block text-gray-700 hover:text-amber-500 font-medium">
-              Glossary
+            <Link href="/certifications" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Certifications
             </Link>
-            <Link href="/devops" className="block text-gray-700 hover:text-amber-500 font-medium">
+            <Link href="/best-practices" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Best Practices
+            </Link>
+            <Link href="/architecture" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Architecture
+            </Link>
+            <Link href="/devops" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               DevOps
             </Link>
-            <Link href="/playground" className="block text-gray-700 hover:text-amber-500 font-medium">
+            <Link href="/playground" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               Playground
             </Link>
-            <Link href="/cheatsheets" className="block text-gray-700 hover:text-amber-500 font-medium">
+            <Link href="/cheatsheets" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               Cheat Sheets
             </Link>
-            <Link href="/interview" className="block text-gray-700 hover:text-amber-500 font-medium">
+            <Link href="/interview" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
               Interview
+            </Link>
+            <Link href="/blog" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Blog
+            </Link>
+            <Link href="/resources" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              Resources
+            </Link>
+            <Link href="/faq" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              FAQ
+            </Link>
+            <Link href="/about" className="block text-gray-700 hover:text-amber-500 font-medium py-1">
+              About
             </Link>
           </div>
         </div>

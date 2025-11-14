@@ -16,19 +16,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-white font-semibold mb-4">Learn</h3>
             <ul className="space-y-2">
               <li><a href="/basics" className="hover:text-amber-400 transition-colors">AWS Basics</a></li>
-              <li><a href="/services" className="hover:text-amber-400 transition-colors">Services Guide</a></li>
-              <li><a href="/interview" className="hover:text-amber-400 transition-colors">Interview Prep</a></li>
+              <li><a href="/tutorials" className="hover:text-amber-400 transition-colors">Tutorials</a></li>
+              <li><a href="/projects" className="hover:text-amber-400 transition-colors">Projects</a></li>
+              <li><a href="/certifications" className="hover:text-amber-400 transition-colors">Certifications</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Learn More</h3>
+            <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">AWS Official</a></li>
-              <li><a href="https://docs.aws.amazon.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">AWS Docs</a></li>
+              <li><a href="/services" className="hover:text-amber-400 transition-colors">Services</a></li>
+              <li><a href="/best-practices" className="hover:text-amber-400 transition-colors">Best Practices</a></li>
+              <li><a href="/architecture" className="hover:text-amber-400 transition-colors">Architecture</a></li>
+              <li><a href="/resources" className="hover:text-amber-400 transition-colors">External Resources</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4">More</h3>
+            <ul className="space-y-2">
+              <li><a href="/blog" className="hover:text-amber-400 transition-colors">Blog</a></li>
+              <li><a href="/interview" className="hover:text-amber-400 transition-colors">Interview Prep</a></li>
+              <li><a href="/faq" className="hover:text-amber-400 transition-colors">FAQ</a></li>
+              <li><a href="/about" className="hover:text-amber-400 transition-colors">About</a></li>
             </ul>
           </div>
         </div>
